@@ -10,6 +10,9 @@ GAME_LIB_DIRS=$(LIB_DIRS) -L$(CURDIR)/bin
 GAME_HEADERS:=$(wildcard $(CURDIR)/game/*.h)
 GAME_FILES:=$(wildcard $(CURDIR)/game/*.cpp)
 
+BASE_HEADERS:=$(wildcard $(CURDIR)/base/*.h)
+BASE_FILES:=$(wildcard $(CURDIR)/base/*.cpp)
+
 #CLIENT_HEADERS:=$(wildcard $(CURDIR)/client/*.h)
 #CLIENT_FILES:=$(wildcard $(CURDIR)/client/*.cpp)
 
@@ -22,13 +25,16 @@ BIN_DIR=bin
 
 # TODO upgrade to the version on my laptop that makes object files
 
-game: libserver.so
+game: libserver.so libbase.so prepareDir
 	$(CC) $(CFLAGS) $(GAME_FILES) $(GAME_LIBS) $(GAME_LIB_DIRS) $(GAME_INCLUDE) -o $(BIN_DIR)/$@
+
+libbase.so: prepareDir
+	$(CC) $(CFLAGS) $(BASE_FILES) $(LIBS) $(LIB_DIRS) $(INCLUDE_DIRS) -shared -fPIC -o $(BIN_DIR)/$@
 
 #client.so: prepareDir
 #	$(CC) $(CFLAGS) $(CLIENT_FILES) $(LIBS) $(LIB_DIRS) $(INCLUDE_DIRS) -shared -o $(BIN_DIR)/$@
 
-libserver.so: prepareDir
+libserver.so: libbase.so prepareDir
 	$(CC) $(CFLAGS) $(SERVER_FILES) $(LIBS) $(LIB_DIRS) $(INCLUDE_DIRS) -shared -fPIC -o $(BIN_DIR)/$@
 
 #test:
