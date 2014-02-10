@@ -1,0 +1,3 @@
+[submodule "lib/noslib"]
+	path = lib/noslib
+	url = https://github.com/Nehmulos/N0Strain-Serialization-Library.git
