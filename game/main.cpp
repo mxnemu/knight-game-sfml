@@ -1,5 +1,5 @@
 #include <iostream>
-#include <server.h>
+#include <server/server.h>
 #include "game.h"
 #include "editor.h"
 

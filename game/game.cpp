@@ -24,7 +24,12 @@ void Game::loop() {
         while (this->window.pollEvent(event)) {
             if (event.type == sf::Event::Closed) {
                 window.close();
+            } else {
+                this->activeMode->handleEvent(event);
             }
         }
+        this->window.clear(sf::Color::Black);
+        this->activeMode->draw();
+        this->window.display();
     }
 }

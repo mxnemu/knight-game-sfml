@@ -1,6 +1,6 @@
 #pragma once
 #include "gamemode.h"
-#include <SFML/Window.hpp>
+#include <SFML/Graphics.hpp>
 
 class Game {
  public:
@@ -11,5 +11,5 @@ class Game {
     void loop();
  private:
     GameMode* activeMode;
-    sf::Window window;
+    sf::RenderWindow window;
 };
