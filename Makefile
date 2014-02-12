@@ -36,9 +36,6 @@ libserver.so: $(SERVER_OBJ) libbase.so prepareDir
 %.o: %.cpp
 	$(CC) $(CFLAGS) $(INCLUDE_DIRS) -c $< -o $@
 
-#test:
-#	$(CC) $(CFLAGS) List.c StringReplace.c tests/StringReplaceTest.c $(LIBS) -o $(BIN_DIR)/$@
-
 
 prepareDir:
 	$(MKDIR) $(BIN_DIR)
