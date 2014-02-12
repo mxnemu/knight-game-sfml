@@ -13,4 +13,5 @@ class GameMode {
     virtual void draw() = 0;
  protected:
     Game& game;
+    sf::View view;
 };

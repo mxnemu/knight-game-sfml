@@ -1,5 +1,5 @@
 #include "stage.h"
 
-void Stage::addTile(GroundTile tile) {
-    this->tiles.push_back(tile);
+void Stage::addTileSeries(TilePallet& pallet, Position pos) {
+    this->tileserieses.push_back(TileSeries());
 }

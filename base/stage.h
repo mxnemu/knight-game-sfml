@@ -1,13 +1,16 @@
 #pragma once
 #include <N0Slib.h>
 #include <vector>
-#include "groundtile.h"
+#include <SFML/System.hpp>
+#include "tileseries.h"
+#include "tilepallet.h"
+#include "position.h"
 
 class Stage {
  public:
     void describe(nw::Describer& de);
-    void addTile(GroundTile);
+    void addTileSeries(TilePallet& pallet, Position pos);
 
  private:
-    std::vector<GroundTile> tiles;
+    std::vector<TileSeries> tileserieses;
 };
