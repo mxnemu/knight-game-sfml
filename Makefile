@@ -31,7 +31,7 @@ libbase.so: $(BASE_OBJ) prepareDir
 	$(CXX) $(BASE_OBJ) $(LIBS) $(LIB_DIRS) $(INCLUDE_DIRS) -shared -o $(BIN_DIR)/$@
 
 libserver.so: $(SERVER_OBJ) libbase.so prepareDir
-	$(CXX) $(CFLAGS) $(SERVER_OBJ) $(SERVER_LIBS) $(LIB_DIRS) $(INCLUDE_DIRS) -shared -o $(BIN_DIR)/$@
+	$(CXX) $(SERVER_OBJ) $(SERVER_LIBS) $(LIB_DIRS) $(INCLUDE_DIRS) -shared -o $(BIN_DIR)/$@
 
 %.o: %.cpp
 	$(CC) $(CFLAGS) $(INCLUDE_DIRS) -c $< -o $@
