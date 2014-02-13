@@ -5,6 +5,7 @@
 class GroundTile : public Entity {
  public:
     GroundTile();
+    virtual ~GroundTile();
     virtual void setAbsolutePositionImpl(const Position pos, bool sent);
  private:
     sf::ConvexShape shape;

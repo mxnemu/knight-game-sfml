@@ -8,15 +8,13 @@ EditorTool::EditorTool(Editor& editor) :
 
 namespace tool {
 
-void AddTile::click(const Position pos) {
-    this->editor.stageRef().addTileSeries(*this->pallet, pos);
+AddTile::AddTile(Editor& editor) :
+    EditorTool(editor)
+{
 }
 
-Tools::Tools(Editor& editor) :
-    emptyTool(editor)
-    activeTool(emptyTool)
-{
-    
+void AddTile::click(const Position pos) {
+    this->editor.stageRef().addTileSeries(*this->pallet, pos);
 }
 
 } // namespace

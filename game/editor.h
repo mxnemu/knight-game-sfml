@@ -20,5 +20,5 @@ class Editor : public GameMode {
 
  private:
     Stage stage;
-    tool::Tools tools;
+    EditorTool* activeTool;
 };

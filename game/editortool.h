@@ -15,18 +15,10 @@ namespace tool {
 
     class AddTile : public EditorTool {
     public:
+        AddTile(Editor& editor);
         virtual void click(const Position pos);
     private:
         TilePallet* pallet;
     };
-
-    class Tools {
-    public:
-        Tools();
-        EditorTool emptyTool;
-        EditorTool& activeTool;
-        std::vector<EditorTool> tools;
-    };
-    
 } // namespace
 

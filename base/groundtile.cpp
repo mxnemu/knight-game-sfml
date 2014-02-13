@@ -1,9 +1,11 @@
 #include "groundtile.h"
 
 GroundTile::GroundTile() {
-
 }
 
-void setAbsolutePositionImpl(const Position pos, bool sent) {
+GroundTile::~GroundTile() {
+}
+
+void GroundTile::setAbsolutePositionImpl(const Position pos, bool sent) {
     
 }

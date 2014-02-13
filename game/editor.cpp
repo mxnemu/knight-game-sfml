@@ -4,11 +4,11 @@
 Editor::Editor(Game& game, sf::IpAddress serverIp, int port) :
     GameMode(game)
 {
-    this->tools.push(EditorTool());
+    this->activeTool = new EditorTool(*this);
     this->connect(serverIp, port);
 }
 
-Stage& stageRef() {
+Stage& Editor::stageRef() {
     return stage;
 }
 
@@ -23,7 +23,7 @@ void Editor::handleEvent(sf::Event& event) {
         // TODO move into editorMouseAction
         const sf::Vector2f mousePos = sf::Vector2f(event.mouseButton.x, event.mouseButton.y);
         const Position pos = Position::fromMouse(mousePos, this->view);
-        this->tools.activeTool.click(pos);
+        this->activeTool->click(pos);
         
     }
 }
