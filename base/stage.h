@@ -9,7 +9,7 @@
 class Stage {
  public:
     void describe(nw::Describer& de);
-    void addTileSeries(TilePallet& pallet, Position pos);
+    TileSeries& addTileSeries(Position pos);
 
  private:
     std::vector<TileSeries> tileserieses;

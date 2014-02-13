@@ -1,5 +1,6 @@
 #pragma once
 #include <base/tilepallet.h>
+#include <base/tileseries.h>
 
 class Editor;
 
@@ -19,6 +20,7 @@ namespace tool {
         virtual void click(const Position pos);
     private:
         TilePallet* pallet;
+        TileSeries* series;
     };
 } // namespace
 
