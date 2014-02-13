@@ -1,10 +1,11 @@
 #pragma once
+#include "moveable.h"
 
-class Entity {
+class Entity : public Moveable {
  public:
     //    int getId();
  private:
-    int id;    
+    int id;
 };
 
 namespace action {

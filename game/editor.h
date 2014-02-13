@@ -2,11 +2,9 @@
 #include <SFML/Network.hpp>
 #include <base/stage.h>
 #include <base/groundtile.h>
-#include <base/tilepallet.h>
 
 #include "gamemode.h"
-
-
+#include "editortool.h"
 
 class Editor : public GameMode {
  public:
@@ -18,8 +16,9 @@ class Editor : public GameMode {
     virtual void draw() final;
 
     bool connect(sf::IpAddress serverIp, int port);
+    Stage& stageRef();
 
  private:
     Stage stage;
-    TilePallet* activePallete;
+    tool::Tools tools;
 };

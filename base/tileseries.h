@@ -1,10 +1,11 @@
 #pragma once
 #include "editornode.h"
+#include "groundtile.h"
 #include <SFML/System.hpp>
 
 class TileSeries {
  public:
     
  private:
-    sf::Vector2f pos;
+    std::vector<std::pair<EditorNode, GroundTile> > nodes;
 };
