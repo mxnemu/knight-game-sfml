@@ -2,8 +2,8 @@
     "ground": [
         [
             {
-                pos: {x:200,y:200},
-                type: "earth"
+                "pos": {"x":200, "y":200},
+                "type": "earth"
             }
         ]
     ]

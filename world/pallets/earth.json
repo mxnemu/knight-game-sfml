@@ -1,9 +1,9 @@
 {
-    texture: "earth.png",
-    leftBorderWidth: 0,
-    rightBorderWidth: 0,
-    tileHeight: 205,
-    tileWidth: 151,
-    friction: 0.2,
-    restitution: 0.1
+    "texture": "earth.png",
+    "leftBorderWidth": 0,
+    "rightBorderWidth": 0,
+    "tileHeight": 205,
+    "tileWidth": 151,
+    "friction": 0.2,
+    "restitution": 0.1
 }
