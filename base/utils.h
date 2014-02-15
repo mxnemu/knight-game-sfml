@@ -2,6 +2,7 @@
 #include <SFML/System.hpp>
 
 class Utils {
+ public:
     template<class T>
     static T rotationTo(sf::Vector2<T> origin, sf::Vector2<T> b) {
         return atan2(origin.x - b.x , b.y - origin.y);

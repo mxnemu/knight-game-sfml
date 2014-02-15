@@ -29,9 +29,8 @@ void AddTile::click(const Position pos) {
         this->click(pos);
         return;
     }
+    GroundTile* tile = this->pallet->create(pos, NULL, NULL);
 
-    GroundTile* tile = this->pallet->create(NULL, NULL);
-    tile->setAbsolutePosition(pos, false);
     this->series->addTile(tile);
 }
 
