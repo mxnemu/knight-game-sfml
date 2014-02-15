@@ -27,8 +27,7 @@ void TilePallet::describe(nw::Describer& de) {
 
 GroundTile* TilePallet::create(GroundTile* left, GroundTile* right) {
     sf::Image img;
-    // TODO fix path parsing remove test path
-    if (!img.loadFromFile(std::string("./img/ground/earth.png") + texture)) {
+    if (!img.loadFromFile(std::string("./img/ground/") + texture)) {
         return NULL;
     }
     sf::Texture* tex = new sf::Texture();
