@@ -21,10 +21,22 @@ bool Editor::connect(sf::IpAddress serverIp, int port) {
 void Editor::newStage() {
 }
 void Editor::handleEvent(sf::Event& event) {
-    if (event.type == sf::Event::MouseButtonPressed) {
+    switch (event.type) {
+    case sf::Event::MouseButtonPressed: {
         const sf::Vector2f mousePos = sf::Vector2f(event.mouseButton.x, event.mouseButton.y);
         const Position pos = Position::fromMouse(mousePos, this->view);
         this->activeTool->click(pos);
+        break;
+    }
+    case sf::Event::MouseWheelMoved: {
+        float scale = (event.mouseWheel.y > 0 ? 0.02 : -0.02);
+        sf::View view = this->game.getWindowRef().getView();
+        view.zoom(scale);
+        this->game.getWindowRef().setView(view);
+        break;
+    }
+    default:
+        break;
     }
 }
 
