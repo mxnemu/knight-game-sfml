@@ -1,11 +1,13 @@
 #include "editor.h"
 #include "editortool.h"
+#include "game.h"
 
 Editor::Editor(Game& game, sf::IpAddress serverIp, int port) :
     GameMode(game)
 {
-    this->activeTool = new EditorTool(*this);
     this->connect(serverIp, port);
+    this->pallets.push_back(TilePallet("./world/pallets/earth.json"));
+    this->activeTool = new tool::AddTile(*this, &this->pallets.back());
 }
 
 Stage& Editor::stageRef() {
@@ -31,6 +33,6 @@ void Editor::handleEvent(sf::Event& event) {
 void Editor::update(sf::Time) {
     
 }
-void Editor::draw() {
-    
+void Editor::draw(sf::RenderWindow& window) {
+    stage.draw(window);
 }

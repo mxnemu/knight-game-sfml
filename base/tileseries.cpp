@@ -1,11 +1,9 @@
 #include "tileseries.h"
 
 GroundTile& TileSeries::addTile(GroundTile tile) {
-    this->nodes.push_back(std::pair<EditorNode, GroundTile>(
-                                                            EditorNode(tile),
-                                                            tile
-                                                            ));
-    return this->nodes.back().second;
+    this->tiles.push_back(tile);
+    this->nodes.push_back(EditorNode(tiles.back()));
+    return this->tiles.back();
 }
 
 void TileSeries::setAbsolutePositionImpl(Position pos, bool sent) {
@@ -13,4 +11,8 @@ void TileSeries::setAbsolutePositionImpl(Position pos, bool sent) {
     // remove sent from moveimpl fn header
 }
 
-
+void TileSeries::draw(sf::RenderWindow& window) {
+    for (EditorNode& it : nodes) {
+        it.draw(window);
+    }
+}

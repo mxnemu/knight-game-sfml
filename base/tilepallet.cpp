@@ -1,5 +1,6 @@
 #include "tilepallet.h"
 #include "groundtile.h"
+#include <SFML/Graphics.hpp>
 
 TilePallet::TilePallet(const std::string path) {
     leftBorderWidth = 0;
@@ -10,6 +11,8 @@ TilePallet::TilePallet(const std::string path) {
     restitution = 0;
     nw::JsonReader jr(path);
     this->describe(jr);
+    jr.close();
+    std::cerr << jr.getErrorMessage() << std::endl;
 }
 
 void TilePallet::describe(nw::Describer& de) {
@@ -23,11 +26,18 @@ void TilePallet::describe(nw::Describer& de) {
 }
 
 GroundTile TilePallet::create(GroundTile* left, GroundTile* right) {
+    sf::Image img;
+    img.loadFromFile(std::string("./img/ground/earth.png") + texture);
+    sf::Texture* tex = new sf::Texture();
+    tex->loadFromImage(img);
+    GroundTile ret;
+    ret.shape.setTexture(tex);
     if (left && !right) {
-        return GroundTile();
+        
     } else if (!left && right) {
-        return GroundTile();
+
     } else {
-        return GroundTile();
+
     }
+    return ret;
 }

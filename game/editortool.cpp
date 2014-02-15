@@ -8,9 +8,9 @@ EditorTool::EditorTool(Editor& editor) :
 
 namespace tool {
 
-AddTile::AddTile(Editor& editor) :
+AddTile::AddTile(Editor& editor, TilePallet* pallet) :
     EditorTool(editor),
-    pallet(NULL),
+    pallet(pallet),
     series(NULL)
 {
 }

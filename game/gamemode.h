@@ -10,7 +10,7 @@ class GameMode {
 
     virtual void handleEvent(sf::Event& event) = 0;
     virtual void update(sf::Time) = 0;
-    virtual void draw() = 0;
+    virtual void draw(sf::RenderWindow&) = 0;
  protected:
     Game& game;
     sf::View view;

@@ -1,5 +1,9 @@
 #include "entity.h"
 
+Entity::Entity() {
+    id = -1;
+}
+
 Entity::~Entity() {
     for (std::function<void()>&cb : beforeDeleteCallbacks) {
         cb();

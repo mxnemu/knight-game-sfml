@@ -29,7 +29,7 @@ void Game::loop() {
             }
         }
         this->window.clear(sf::Color::Black);
-        this->activeMode->draw();
+        this->activeMode->draw(window);
         this->window.display();
     }
 }

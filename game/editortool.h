@@ -16,7 +16,7 @@ namespace tool {
 
     class AddTile : public EditorTool {
     public:
-        AddTile(Editor& editor);
+        AddTile(Editor& editor, TilePallet* pallet = NULL);
         virtual void click(const Position pos);
     private:
         TilePallet* pallet;
