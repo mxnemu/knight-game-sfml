@@ -7,6 +7,7 @@ class EditorNode : public Entity {
     EditorNode(Entity& entity);
 
     void draw(sf::RenderWindow& window);
+    virtual Position getPosition();
  protected:
     virtual void setAbsolutePositionImpl(const Position pos, bool sent);
 

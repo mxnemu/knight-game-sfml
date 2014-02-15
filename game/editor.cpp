@@ -22,11 +22,9 @@ void Editor::newStage() {
 }
 void Editor::handleEvent(sf::Event& event) {
     if (event.type == sf::Event::MouseButtonPressed) {
-        // TODO move into editorMouseAction
         const sf::Vector2f mousePos = sf::Vector2f(event.mouseButton.x, event.mouseButton.y);
         const Position pos = Position::fromMouse(mousePos, this->view);
         this->activeTool->click(pos);
-        
     }
 }
 

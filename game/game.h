@@ -9,6 +9,8 @@ class Game {
     void setMode(GameMode* mode);
 
     void loop();
+
+    sf::RenderWindow& getWindowRef();
  private:
     GameMode* activeMode;
     sf::RenderWindow window;

@@ -1,6 +1,6 @@
 #include "entity.h"
 
-Entity::Entity() {
+Entity::Entity() : Moveable() {
     id = -1;
 }
 

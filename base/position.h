@@ -6,6 +6,7 @@ class Position {
     static Position fromMouse(sf::Vector2f pos, sf::View view);
     // TODO default-arg scale with a constant
     static Position fromPhysics(sf::Vector2f pos, float physicsScale);
+    static Position fromDrawable(sf::Vector2f pos);
 
     // TODO default-arg scale with a constant
     sf::Vector2f toPhysics(float physicsScale) const;

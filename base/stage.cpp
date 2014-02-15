@@ -6,7 +6,7 @@ TileSeries&  Stage::addTileSeries(Position pos) {
 }
 
 void Stage::draw(sf::RenderWindow& window) {
-    for (TileSeries& it : this->tileserieses) {
-        it.draw(window);
+    for (auto it = this->tileserieses.begin(); it != this->tileserieses.end(); ++it) {
+        (*it).draw(window);
     }
 }

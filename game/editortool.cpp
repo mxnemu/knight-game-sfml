@@ -30,7 +30,9 @@ void AddTile::click(const Position pos) {
         return;
     }
 
-    this->series->addTile(this->pallet->create(NULL, NULL));
+    GroundTile* tile = this->pallet->create(NULL, NULL);
+    tile->setAbsolutePosition(pos, false);
+    this->series->addTile(tile);
 }
 
 } // namespace

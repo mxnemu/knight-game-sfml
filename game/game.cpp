@@ -33,3 +33,7 @@ void Game::loop() {
         this->window.display();
     }
 }
+
+sf::RenderWindow& Game::getWindowRef() {
+    return this->window;
+}
