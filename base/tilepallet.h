@@ -6,7 +6,7 @@ class TilePallet {
  public:
     TilePallet(const std::string fileName);
     void describe(nw::Describer& de);
-    GroundTile create(GroundTile* left, GroundTile* right);
+    GroundTile* create(GroundTile* left, GroundTile* right);
     
     std::string texture;
     int leftBorderWidth;

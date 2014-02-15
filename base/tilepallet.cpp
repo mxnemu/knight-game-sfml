@@ -25,13 +25,18 @@ void TilePallet::describe(nw::Describer& de) {
     nw::describe(de, "restitution", restitution);
 }
 
-GroundTile TilePallet::create(GroundTile* left, GroundTile* right) {
+GroundTile* TilePallet::create(GroundTile* left, GroundTile* right) {
     sf::Image img;
-    img.loadFromFile(std::string("./img/ground/earth.png") + texture);
+    // TODO fix path parsing remove test path
+    if (!img.loadFromFile(std::string("./img/ground/earth.png") + texture)) {
+        return NULL;
+    }
     sf::Texture* tex = new sf::Texture();
-    tex->loadFromImage(img);
-    GroundTile ret;
-    ret.shape.setTexture(tex);
+    if (!tex->loadFromImage(img)) {
+        return NULL;
+    }
+    GroundTile* ret = new GroundTile();
+    ret->shape.setTexture(tex);
     if (left && !right) {
         
     } else if (!left && right) {

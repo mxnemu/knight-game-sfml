@@ -1,9 +1,14 @@
 #include "tileseries.h"
 
-GroundTile& TileSeries::addTile(GroundTile tile) {
+TileSeries::~TileSeries() {
+    for (GroundTile* it : tiles) {
+        delete it;
+    }
+}
+
+void TileSeries::addTile(GroundTile* tile) {
     this->tiles.push_back(tile);
-    this->nodes.push_back(EditorNode(tiles.back()));
-    return this->tiles.back();
+    this->nodes.push_back(EditorNode(*tile));
 }
 
 void TileSeries::setAbsolutePositionImpl(Position pos, bool sent) {

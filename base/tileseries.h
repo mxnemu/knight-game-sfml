@@ -5,10 +5,11 @@
 
 class TileSeries : public Entity {
  public:
-    GroundTile& addTile(GroundTile tile);
+    virtual ~TileSeries();
+    void addTile(GroundTile* tile);
     void setAbsolutePositionImpl(Position pos, bool sent);
     virtual void draw(sf::RenderWindow& window);
  private:
     std::vector<EditorNode> nodes;
-    std::vector<GroundTile> tiles;
+    std::vector<GroundTile*> tiles;
 };
